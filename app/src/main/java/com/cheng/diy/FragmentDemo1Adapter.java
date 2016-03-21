@@ -9,14 +9,14 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentAdapterDemo extends FragmentStatePagerAdapter {
-//public class FragmentAdapterDemo extends FragmentPagerAdapter {
+public class FragmentDemo1Adapter extends FragmentStatePagerAdapter {
+//public class FragmentDemo1Adapter extends FragmentPagerAdapter {
 
 	private ArrayList<Fragment> fragments;
 	private List<Integer> mTypes;
 	private FragmentManager fm;
 	
-	public FragmentAdapterDemo(FragmentManager fm, List<Integer> types) {
+	public FragmentDemo1Adapter(FragmentManager fm, List<Integer> types) {
 		super(fm);
 		this.fm = fm;
 		this.mTypes = types;
@@ -31,7 +31,7 @@ public class FragmentAdapterDemo extends FragmentStatePagerAdapter {
 		this.mTypes = dataList;
 		ArrayList<Fragment> fragments = new ArrayList<>();
 		for (int i = 0, size = dataList.size(); i < size; i++) {
-			Log.e("FragmentAdapterDemo", dataList.get(i).toString());
+			Log.e("FragmentDemo1Adapter", dataList.get(i).toString());
 			fragments.add(FragmentDemo.instance(dataList.get(i)));
 		}
 		setFragments(fragments);

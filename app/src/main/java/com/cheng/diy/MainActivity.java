@@ -10,7 +10,8 @@ import java.util.LinkedList;
 public class MainActivity extends FragmentActivity {
 
     private ViewPager mTestVP;
-    private FragmentAdapterDemo mFragmentAdapter;
+    private FragmentDemo2Adapter mFragmentAdapter2;
+//    private FragmentDemo1Adapter mFragmentAdapter2;
     private LinkedList<Integer> mDataList;
 
     @Override
@@ -31,8 +32,8 @@ public class MainActivity extends FragmentActivity {
         for (int i = 0; i < 6; i++) {
             mDataList.add(i);
         }
-        mFragmentAdapter = new FragmentAdapterDemo(getSupportFragmentManager(), mDataList);
-        mTestVP.setAdapter(mFragmentAdapter);
+        mFragmentAdapter2 = new FragmentDemo2Adapter(getSupportFragmentManager(), mDataList);
+        mTestVP.setAdapter(mFragmentAdapter2);
     }
 
     public void onClick(View v) {
@@ -40,22 +41,22 @@ public class MainActivity extends FragmentActivity {
             case R.id.btn_delete:
                 if (!mDataList.isEmpty())
                 mDataList.removeLast();
-                mFragmentAdapter.updateData(mDataList);
+                mFragmentAdapter2.updateData(mDataList);
                 break;
             case R.id.btn_add:
                 mDataList.addLast(7);
-                mFragmentAdapter.updateData(mDataList);
+                mFragmentAdapter2.updateData(mDataList);
                 break;
             case R.id.btn_change:
                 mDataList.clear();
-                mFragmentAdapter.updateData(mDataList);
+                mFragmentAdapter2.updateData(mDataList);
                 break;
             case R.id.btn_addall:
                 mDataList.clear();
                 for (int i = 0; i < 3; i++) {
                     mDataList.add(7);
                 }
-                mFragmentAdapter.updateData(mDataList);
+                mFragmentAdapter2.updateData(mDataList);
                 break;
         }
     }
